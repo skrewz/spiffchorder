@@ -110,7 +110,7 @@ const uint8_t modmask[8] PROGMEM = {
 /* USB report descriptor (length is defined in usbconfig.h)
    This has been changed to conform to the USB keyboard boot
    protocol */
-char usbHidReportDescriptor[USB_CFG_HID_REPORT_DESCRIPTOR_LENGTH] 
+const char usbHidReportDescriptor[USB_CFG_HID_REPORT_DESCRIPTOR_LENGTH] 
   PROGMEM = {
     0x05, 0x01,                    // USAGE_PAGE (Generic Desktop)
     0x09, 0x06,                    // USAGE (Keyboard)
@@ -147,7 +147,7 @@ char usbHidReportDescriptor[USB_CFG_HID_REPORT_DESCRIPTOR_LENGTH]
 };
 
 /* An array of pointers to the decoding tables */
-const prog_keymap_t *keymap_tables[] PROGMEM = {
+const prog_keymap_t * const keymap_tables[] PROGMEM = {
   keymap_default,                  // The default mode
   keymap_numsym,                   // Numbers/Symbols mode
   keymap_function                  // Function key mode
